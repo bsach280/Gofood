@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import background from "../images/background.jpg";
-import { Link } from "react-router-dom";
+import { Link,useNavigate  } from "react-router-dom";
 
 const Signup = () => {
   const [credentials, setCredentials] = useState({ name: "",email: "",password: "",geolocation: "" });
-
+const navigate = useNavigate();
     const handleSubmitform = async (e) => {
     e.preventDefault();
       const response = await fetch("http://localhost:7000/api/createuser", {
@@ -24,6 +24,7 @@ const Signup = () => {
 
     if(jsondata.success){
         console.log("successfull")
+        navigate("/");
     }else{
         alert("plz check credentials")
     }
@@ -45,6 +46,7 @@ const Signup = () => {
         minHeight: "100vh",
       }}
     >
+      
       <section className="">
         <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
           <div className="w-full bg-gray-300 rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
@@ -144,12 +146,12 @@ const Signup = () => {
                       className="font-light text-gray-500 dark:text-gray-300"
                     >
                       I accept the{" "}
-                      <a
+                      <Link
                         className="font-medium text-primary-600 hover:underline dark:text-primary-500"
                         href="#"
                       >
                         Terms and Conditions
-                      </a>
+                      </Link>
                     </label>
                   </div> */}
                 </div>
@@ -161,12 +163,12 @@ const Signup = () => {
                 </button>
                 <p className="text-sm font-light text-gray-700">
                   Already have an account?{" "}
-                  <a
-                    href="#"
+                  <Link
+                    href="/login"
                     className=" text-blue-600 font-bold hover:underline"
                   >
                     Login here
-                  </a>
+                  </Link>
                 </p>
               </form>
             </div>

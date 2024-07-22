@@ -5,7 +5,7 @@ const Card = () => {
   return (
     <div>
       <div className="m-3">
-        <div className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <div className="max-w-2xl p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
     
        <img className="h-32 w-full"
       // src="https://img.daisyui.com/images/stock/photo-1572635148818-ef6fd45eb394.jpg"

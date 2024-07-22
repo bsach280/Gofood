@@ -16,9 +16,7 @@ const Home = () => {
         {" "}
         <Carousel />
       </div>
-      <div className="flex overflow-x-autoauto">
-        <Card />
-        <Card />
+      <div className="flex overflow-x-auto">
         <Card />
         <Card />
         <Card />
