@@ -1,8 +1,17 @@
 const express = require('express');
 const connectDB = require('./db');
+const cors = require('cors');
 
 const app = express();
 const port = 7000;
+
+// Middleware to enable CORS
+app.use(cors({
+  origin: 'http://localhost:5173', // Your frontend URL
+  methods: 'GET,POST,PUT,DELETE',
+  allowedHeaders: 'Content-Type,Authorization'
+}));
+
 // Middleware to parse JSON bodies
 app.use(express.json());
 

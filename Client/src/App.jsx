@@ -9,6 +9,7 @@ import {
   
 } from "react-router-dom"
 import Login from './Screen/Login'
+import Signup from './Screen/Signup'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -19,6 +20,7 @@ function App() {
       <div>
         <Routes>
           <Route path='/' element={<Home/>}/>
+          <Route path='/createuser' element={<Signup/>}/>
           <Route path='/login' element={<Login/>}/>
 
         </Routes>
