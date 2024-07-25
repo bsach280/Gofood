@@ -1,27 +1,32 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Card = () => {
+const Card = (props) => {
+
+let options =props.options; //here options is object which have options and price i just want options now 
+let priceOptions = Object.keys(options)
+
   return (
     <div>
       <div className="m-3">
-        <div className="max-w-2xl p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-    
+        <div className="max-w-2xl p-2 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+{/*     
        <img className="h-32 w-full"
       // src="https://img.daisyui.com/images/stock/photo-1572635148818-ef6fd45eb394.jpg"
       src="https://fastly.picsum.photos/id/30/1280/901.jpg?hmac=A_hpFyEavMBB7Dsmmp53kPXKmatwM05MUDatlWSgATE"
-      alt="Burger" />
+      alt="Burger" /> */}
+      <img  src={props.imgSrc} className="h-32 w-full" />
    
       
        
       
-            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-              Card Heading
+            <h5 className="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+             {props.foodname}
             </h5>
          
-          <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-            Here are the biggest enterprise technology acquisitions of 2024 
-          </p>
+          {/* <p className="mb-2 font-normal text-gray-700 dark:text-gray-400">
+           {props.description}
+          </p> */}
           <div className="container w-full">
             <select className="m-2 h-full bg-gray-300 rounded">
               {Array.from(Array(5), (e, i) => {
@@ -33,8 +38,9 @@ const Card = () => {
               })}
             </select>
             <select className="m-2 h-full bg-gray-300 rounded">
-              <option value="half">half</option>
-              <option value="full">frull</option>
+             {priceOptions.map((op)=>{
+              return <option key={op} value={op}>{op}</option>
+             })}
             </select>
             <div className="h-full inline-block font-bold">Final Price</div>
           </div>

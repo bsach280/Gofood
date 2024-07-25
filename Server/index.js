@@ -25,6 +25,8 @@ app.get('/', (req, res) => {
 //
 app.use('/api', require("./Routes/createUser"))
 app.use('/api', require("./Routes/login"))
+app.use('/api', require("./Routes/DisplayData"))
+
 
 
 

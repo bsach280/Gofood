@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { Children, useState } from "react";
 import background from "../images/background.jpg";
-import { Link,useNavigate } from "react-router-dom";
+import { json, Link,useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [logincredentials, setlogincredentials] = useState({ email: "", password: "",});
@@ -24,6 +24,8 @@ const Login = () => {
 
     if (logindata.success) {
       console.log("successfull");
+     localStorage.setItem("authToken",logindata.authToken);
+     console.log("authoken from server ",localStorage.getItem("authToken"))
       navigate("/");
     } else {
       alert("plz check credentials");
