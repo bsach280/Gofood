@@ -10,12 +10,14 @@ import {
 } from "react-router-dom"
 import Login from './Screen/Login'
 import Signup from './Screen/Signup'
+import { CartProvider } from './Components/ContextReducer'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
+    <CartProvider>
     <Router>
       <div>
         <Routes>
@@ -26,6 +28,8 @@ function App() {
         </Routes>
       </div>
     </Router>
+    </CartProvider>
+   
     
         
     </>
